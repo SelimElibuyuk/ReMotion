@@ -1,0 +1,251 @@
+{
+  "id": "demo_cobra_effect",
+  "theme": "blueprint",
+  "fps": 30,
+  "audio": {
+    "voice": "assets/audio/voice.wav",
+    "words": "project/words.json"
+  },
+  "chrome": {
+    "title": "The Cobra Effect",
+    "kicker": "IDEAS · INCENTIVES",
+    "footnote": "Source: Siebert, Der Kobra-Effekt (2001)"
+  },
+  "captions": {
+    "1": "So they offered a bounty: 1 rupee for every dead cobra."
+  },
+  "stages": [
+    {
+      "id": "problem",
+      "from": "@line:0",
+      "to": "@line:2",
+      "camera": {
+        "push": 0.04
+      },
+      "elements": [
+        {
+          "type": "svg",
+          "id": "cobra",
+          "asset": "cobra",
+          "x": 540,
+          "y": 730,
+          "w": 660,
+          "enter": {
+            "draw": "@w:6",
+            "dur": 1.4
+          }
+        },
+        {
+          "type": "tag",
+          "id": "bounty",
+          "text": "BOUNTY: 1 RUPEE",
+          "x": 540,
+          "y": 1115,
+          "tone": "accent",
+          "enter": {
+            "pop": "@w:12"
+          }
+        },
+        {
+          "type": "svg",
+          "asset": "coin",
+          "x": 540,
+          "y": 1235,
+          "w": 150,
+          "enter": {
+            "pop": "@w:14"
+          }
+        }
+      ]
+    },
+    {
+      "id": "worked",
+      "from": "@line:2",
+      "to": "@line:3",
+      "elements": [
+        {
+          "type": "tag",
+          "text": "IT WORKED",
+          "x": 540,
+          "y": 520,
+          "tone": "good",
+          "enter": {
+            "pop": "@w:22"
+          }
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 10000,
+          "suffix": " cobras",
+          "x": 540,
+          "y": 720,
+          "at": "@w:23",
+          "dur": 1.8,
+          "size": "title"
+        },
+        {
+          "type": "dots",
+          "x": 540,
+          "y": 1060,
+          "w": 600,
+          "count": 40,
+          "perRow": 10,
+          "label": "1 dot = 250 cobras",
+          "enter": {
+            "fade": "@w:25"
+          }
+        }
+      ]
+    },
+    {
+      "id": "farms",
+      "from": "@line:3",
+      "to": "@line:4",
+      "elements": [
+        {
+          "type": "svg",
+          "asset": "cage",
+          "x": 540,
+          "y": 760,
+          "w": 660,
+          "enter": {
+            "draw": "@w:32",
+            "dur": 1.2
+          }
+        },
+        {
+          "type": "tag",
+          "id": "profit",
+          "text": "BREEDING FOR PROFIT",
+          "x": 540,
+          "y": 1180,
+          "tone": "bad",
+          "enter": {
+            "pop": "@w:36"
+          }
+        }
+      ]
+    },
+    {
+      "id": "release",
+      "from": "@line:4",
+      "to": "@line:5",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Wild cobras",
+          "x": 540,
+          "y": 500,
+          "size": "label",
+          "font": "mono",
+          "enter": {
+            "fade": "@w:37"
+          }
+        },
+        {
+          "type": "barchart",
+          "x": 540,
+          "y": 880,
+          "w": 760,
+          "h": 520,
+          "bars": [
+            {
+              "label": "Before",
+              "value": 100
+            },
+            {
+              "label": "Bounty",
+              "value": 70,
+              "tone": "good"
+            },
+            {
+              "label": "After",
+              "value": 70,
+              "tone": "bad"
+            }
+          ],
+          "max": 180,
+          "changes": [
+            {
+              "at": "@w:45",
+              "values": [
+                100,
+                70,
+                170
+              ]
+            }
+          ],
+          "enter": {
+            "fade": "@w:39"
+          }
+        }
+      ]
+    },
+    {
+      "id": "idea",
+      "from": "@line:5",
+      "to": "@end",
+      "elements": [
+        {
+          "type": "panel",
+          "x": 540,
+          "y": 820,
+          "w": 860,
+          "h": 560,
+          "enter": {
+            "slide": "@w:47"
+          }
+        },
+        {
+          "type": "text",
+          "id": "fix",
+          "text": "The fix",
+          "x": 540,
+          "y": 690,
+          "size": "title",
+          "enter": {
+            "fade": "@w:48"
+          }
+        },
+        {
+          "type": "arrow",
+          "from": [
+            540,
+            760
+          ],
+          "to": [
+            540,
+            870
+          ],
+          "enter": {
+            "draw": "@w:49",
+            "dur": 0.6
+          }
+        },
+        {
+          "type": "text",
+          "text": "made it worse",
+          "x": 540,
+          "y": 950,
+          "size": "title",
+          "tone": "bad",
+          "enter": {
+            "type": "@w:51",
+            "dur": 0.8
+          }
+        },
+        {
+          "type": "tag",
+          "text": "THE COBRA EFFECT",
+          "x": 540,
+          "y": 1230,
+          "tone": "accent",
+          "enter": {
+            "pop": "@w:56"
+          }
+        }
+      ]
+    }
+  ]
+}

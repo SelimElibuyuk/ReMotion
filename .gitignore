@@ -1,0 +1,6 @@
+node_modules/
+out/
+public/media/
+*.log
+.remotion/
+__pycache__/

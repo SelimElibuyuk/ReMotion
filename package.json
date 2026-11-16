@@ -1,0 +1,33 @@
+{
+  "name": "explainer-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Code-driven engine: scene.json + voiceover -> 1080x1920 explainer short (Remotion).",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "video": "tsx scripts/render.ts",
+    "registry": "tsx scripts/build-registry.ts",
+    "lint:svg": "tsx scripts/lint-svg.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.544",
+    "@remotion/cli": "4.0.544",
+    "@remotion/fonts": "4.0.544",
+    "@remotion/media": "4.0.544",
+    "@remotion/renderer": "4.0.544",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.544",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.0"
+  }
+}

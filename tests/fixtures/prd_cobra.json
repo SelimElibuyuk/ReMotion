@@ -1,0 +1,19 @@
+{
+  "id": "002_cobra_effect",
+  "theme": "blueprint",
+  "fps": 30,
+  "audio": { "voice": "assets/audio/voice.wav", "words": "project/words.json", "music": "_shared/music/calm_01.mp3", "musicGain": 0.12 },
+  "chrome": { "title": "The Cobra Effect", "kicker": "IDEAS · INCENTIVES", "footnote": "Source: Siebert, Der Kobra-Effekt (2001)" },
+  "stages": [
+    {
+      "id": "bounty",
+      "from": "@line:0", "to": "@line:4",
+      "camera": { "pan": [0, 0, 0, -40] },
+      "elements": [
+        { "type": "svg", "asset": "cobra", "x": 540, "y": 760, "w": 420, "enter": { "draw": "@w:3", "dur": 1.2 } },
+        { "type": "tag", "text": "BOUNTY: 1 RUPEE", "x": 540, "y": 1040, "enter": { "pop": "@w:9" } },
+        { "type": "counter", "from": 0, "to": 10000, "suffix": " cobras", "x": 540, "y": 560, "at": "@w:21", "dur": 1.5 }
+      ]
+    }
+  ]
+}
